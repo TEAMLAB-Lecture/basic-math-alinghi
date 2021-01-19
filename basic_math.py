@@ -59,15 +59,14 @@ def get_mean(number_list):
 
         Returns:
             mean (int): parameter number_list 숫자들의 평균
-
         Examples:
             >>> number_list = [39, 54, 32, 11, 99]
             >>> import basic_math as bm
             >>> bm.get_mean(number_list)
             47
     """
-    mean = sum(number_list)//len(number_list)
-    return mean
+    mean = sum(number_list)/len(number_list)
+    return get_mean
 
 
 def get_median(number_list):
@@ -91,8 +90,9 @@ def get_median(number_list):
             35.5
     """
     number_list.sort()
-    if len(number_list)%2==0:
-        median=(number_list[len(number_list)//2]+number_list[len(number_list)//2-1])/2
+    if len(number_list) % 2 == 0:
+        median = (number_list[len(number_list)//2] +
+                  number_list[len(number_list)//2-1])/2
     else:
-        median=number_list[len(number_list)//2]
+        median = number_list[len(number_list)//2]
     return median
